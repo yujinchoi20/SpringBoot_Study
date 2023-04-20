@@ -11,10 +11,12 @@ class MemoryMemberRepositoryTest {
 
     MemoryMemberRepository repository = new MemoryMemberRepository();
 
-//    @AfterEach
-//    public void atterEach(){ //clear
-//        repository.clearStore();
-//    }
+    @AfterEach
+    public void afterEach(){ //clear
+        repository.clearStore();
+    }
+    //afterEach 메서드가 없으면 새로 생성한 객체들이 쌓이면서 중복이 일어날 수 밖에 없음
+    //트랜잭션 단위로 작업을 할 때, 하나의 트랜잭션이 끝나면 afterEach 메서드를 실행시켜서 저장소를 clear해준다.
 
     @Test
     public void save() {
