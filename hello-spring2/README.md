@@ -26,4 +26,16 @@
 * viewResolver 대신 HttpMessageConverter가 동작된다.
 * @ResponseBody를 사용하고 객체를 반환하면 객체가 json 형태로 변환된다. 
 
+--------
+
+### 2. 회원 관리 예제 - 백엔드 개발
+
+#### 비지니스 요구사항
+    * 데이터 : 회원ID, 이름
+    * 기능: 회원 등록, 조희
+    * 데이터 저정소: 시작은 메모리
+    * Controller: 웹MVC의 컨트롤러 역할
+    * Service: 핵심 비지니스 로직 구현
+    * Repository: 데이터베이스에 접근, 도메인 객체를 데이터베이스에 저장하고 관리
+    * Domain: 비지니스 도메인 객체
 
