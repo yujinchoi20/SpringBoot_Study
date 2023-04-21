@@ -39,3 +39,32 @@
     * Repository: 데이터베이스에 접근, 도메인 객체를 데이터베이스에 저장하고 관리
     * Domain: 비지니스 도메인 객체
 
+클래스 의존 관계
+![img_1.png](img_1.png)
+
+#### 회원 도메인과 리포지토리 만들기 
+* 회원 객체 -> Member
+* 회원 리포지토리 인터페이스 -> MemberRepository
+* 회원 리포지토리 메모리 구현체 -> MemoryMemberRepository
+
+#### 회원 리포지토리 테스트 케이스 작성
+* 회원 리포지토리 메모리 구현체 테스트 -> MemoryMemberRepositoryTest
+
+#### 회원 서비스 개발
+-> MemberService
+
+-> 기존: 회원 서비스가 메모리 회원 리포지토리를 직접 생성
+
+`private final MemberRepository memberRepository = new MemoryMemberRepository();`
+
+-> 변경: DI 가능하게 바꿈
+
+`private final MemberRepository memberRepository;`
+`public MemberService(MemberRepository memberRepository) {`
+`    this.memberRepository = memberRepository;`
+`}`
+
+
+#### 회원 서비스 테스트
+-> MemberServiceTest
+

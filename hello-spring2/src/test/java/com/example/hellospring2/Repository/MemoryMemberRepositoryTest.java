@@ -30,14 +30,15 @@ class MemoryMemberRepositoryTest {
         //then
         Member result = repository.findById(member.getId()).get();
         Assertions.assertThat(result).isEqualTo(member);
+        //result 객체와 member 객체를 비교하여 같으면 success, 다르면 fail 이 뜬다.
     }
 
-    @Test
-    public void findById() {
-        //given
-        //when
-        //then
-    }
+//    @Test
+//    public void findById() {
+//        //given
+//        //when
+//        //then
+//    }
 
     @Test
     public void findByName() {
