@@ -60,11 +60,69 @@
 -> 변경: DI 가능하게 바꿈
 
 `private final MemberRepository memberRepository;`
-`public MemberService(MemberRepository memberRepository) {`
-`    this.memberRepository = memberRepository;`
-`}`
+
+`public MemberService(MemberRepository memberRepository) {this.memberRepository = memberRepository;}`
 
 
 #### 회원 서비스 테스트
 -> MemberServiceTest
+
+
+-------------
+### 3. 스프링 빈과 의존 관계 
+1) 컴포넌트 스캔과 자동 의존관계 설정
+2) 자바 코드로 직접 스프링 빈 등록하기 (이 방법을 사용)
+##
+#### 컴포넌트 스캔과 자동 의존관계 설정
+회원 컨트롤러가 회원 서비스, 회원 리포지토리를 사용할 수 있게 의존관계를 설정한다. 
+
+먼저 회원 컨트롤러에 @Controller, @Autowired 를 사용한다. 
+
+
+
+생성자에 @Autowired 가 있으면 스프링이 연관된 객체를 스프링 컨테이너에서 찾아서 넣어 준다. 
+
+이렇게 객체 의존관계를 외부에서 넣어주는 것을 DI(Dependency Injection) 이라고 한다. (의존성 주입)
+
+
+
+이 상태에서 실행하면 memberService, memberRepository 가 스프링 빈에 등록되어 있지 않기 때문에 오류가 발생한다. 
+
+`Consider defining a bean of type 'hello.hellospring.service.MemberService' in
+your configuration.`
+
+
+회원 서비스와 회원 레포지토리에 @Component를 포함하는 어노테이션을 추가하면 스프링 빈으로 자동 등록된다.
+추가로 생성자에도 DI를 위해 @Autowired 어노테이션을 추가해야 한다. 
+
+#
+#### 자바 코드로 직접 스프링 빈 등록하기 
+우선 이전에 등록한 @Service, @Repository, @Autowired 어노테이션을 제거하고 진행한다. 
+
+hello.hello-spring2 아래 SpringConfig 파일을 생성한다. 
+
+@Configuration 어노테이션을 추가한다. 
+
+`@Bean
+public MemberService memberService() { 
+return new MemberService(memberRepository());
+}
+
+@Bean
+public MemberRepository memberRepository() {
+return new MemoryMemberRepository();
+} `
+
+위와 같이 코드를 작성하면 스프링 빈으로 등록된다. 
+
+이 방법을 사용하면 나중에 메모리 레포지토리를 다른 레포지토리로 변경할 때 코드 한 줄만 수정해주면 된다. 
+
+
+* DI에는 필드 주입, setter 주입, 생성자 주입이 있다. 의존관계가 실행중에 동적으로 변하는 경우는 거의 없기 때문에 생성자 주입을 권장한다.
+* 지금은 저장소를 확정한 상태가 아니기 때문에 레포지토리를 바꿔가면서 실행하지만 실무에서는 저장소를 하나 정해놓고 진행하기 때문에 컴포넌트 스캔을 사용한다. 
+
+
+------
+
+### 4. 회원 관리 예제 - 웹 MVC 개발
 
