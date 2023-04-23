@@ -40,7 +40,7 @@
     * Domain: 비지니스 도메인 객체
 
 클래스 의존 관계
-![img_1.png](img_1.png)
+![img_1.png](img/img_1.png)
 
 #### 회원 도메인과 리포지토리 만들기 
 * 회원 객체 -> Member
@@ -125,4 +125,43 @@ return new MemoryMemberRepository();
 ------
 
 ### 4. 회원 관리 예제 - 웹 MVC 개발
+
+#### 홈 화면 추가 (HomeController 추가)
+![img_2.png](img/img_2.png)
+
+![](img/home.png)
+
+#
+#### 회원 등록 
+MemberController, MemberForm 작성
+
+웹 등록 화면에서 데이터를 전달 받을 Form 객체 생성
+![img_3.png](img/img_3.png)
+
+
+회원 등록 화면과 회원을 실제로 등록하는 기능 추가(MemberForm 객체를 통해 회원 등록) 
+![img_4.png](img/img_4.png)
+
+![](img/form.png)
+
+
+#
+#### 회원 조회 
+
+![img_5.png](img/img_5.png)
+
+회원 추가 전
+
+![](img/list_null.png)
+
+회원 추가 후 
+
+![](img/list.png)
+
+* template 디렉토리에 html 파일 추가 필요!
+
+
+--------------
+
+### 5. 스프링 DB 접근 기술
 
