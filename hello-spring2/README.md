@@ -165,3 +165,33 @@ MemberController, MemberForm 작성
 
 ### 5. 스프링 DB 접근 기술
 
+#### H2 Database 설치 
+
+설치 후 build.gradle에 라이브러리 추가 
+
+![](img/img_8.png)
+
+
+application.properties에 설정 추가 
+
+![](img/img_7.png)
+
+( jdbc 라이브러리는 jpa 라이브러리에 포함되어 있어 지워도 됨. )
+
+#### 0. 회원 통합 테스트 
+
+#### 1. 순수 jdbc
+
+#### 2. 스프링 jdbcTemplate
+
+    JDBC API의 반복 코드를 제거 but, SQL 문은 작성해야 된다.
+
+#### 3. JPA
+
+    기존의 반복 코드와 SQL도 JPA가 직접 만들어서 실행한다.
+
+#### 4. 스프링 데이터 JPA 
+
+    스프링 부트와 JPA만 사용해도 개발 생산서이 많이 증가하고, 개발해야할 코드도 확연히 줄어든다. 
+    여기에 스프링 데이터 JPA를 사용하면 기존의 한계를 넘어, 레포지토리에 구현 클래스 없이 인터페이스 만으로 개발을 완료할 수 있다. 
+    그리고 반복 개발해온 기본 CRUD 기능도 스프링 데이터 JPA가 모두 제공한다. 
