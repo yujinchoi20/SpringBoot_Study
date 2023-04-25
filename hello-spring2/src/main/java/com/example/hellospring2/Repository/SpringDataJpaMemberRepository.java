@@ -9,4 +9,5 @@ public interface SpringDataJpaMemberRepository extends JpaRepository<Member, Lon
     //interface : 다중 상속 가능
 
     Optional<Member> findByName(String name);
+    //스프링 데이터 JPA는 findByName() 처럼 메서드 이름 만으로 조회 기능을 제공한다.
 }
