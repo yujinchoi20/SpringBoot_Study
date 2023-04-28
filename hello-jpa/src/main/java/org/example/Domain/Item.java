@@ -2,6 +2,8 @@ package org.example.Domain;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Item {
 
@@ -13,6 +15,9 @@ public class Item {
     private String name;
     private int price;
     private int stockQuantity;
+
+    @OneToMany(mappedBy = "item")
+    private List<Category_Item> category_items;
 
     public Long getId() {
         return id;
@@ -44,5 +49,13 @@ public class Item {
 
     public void setStockQuantity(int stockQuantity) {
         this.stockQuantity = stockQuantity;
+    }
+
+    public List<Category_Item> getCategory_items() {
+        return category_items;
+    }
+
+    public void setCategory_items(List<Category_Item> category_items) {
+        this.category_items = category_items;
     }
 }
