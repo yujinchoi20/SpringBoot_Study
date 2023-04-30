@@ -3,7 +3,7 @@ package org.example.Domain;
 import jakarta.persistence.*;
 
 @Entity
-public class Delivery {
+public class Delivery extends BasicEntity {
 
     @Id @GeneratedValue
     private Long id;
