@@ -75,3 +75,9 @@ findMember : 프록시로 반환됨.
 
 ![](img/proxy_reset_check.png)
 
+-------------
+
+##### 지연로딩을 사용한 프록시 조회
+
+![](img/lazy_proxy.png)
+
