@@ -1,9 +1,10 @@
 package org.example.Domain.Items;
 
+import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-import org.example.Domain.Item;
 
 @Entity
+@DiscriminatorValue("B")
 public class Book extends Item {
 
     private String arttist;

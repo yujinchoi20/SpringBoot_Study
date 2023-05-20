@@ -1,4 +1,4 @@
-package org.example.Domain;
+package org.example.Domain.Order;
 
 public enum OrderStatus {
     ORDER, CANCEL

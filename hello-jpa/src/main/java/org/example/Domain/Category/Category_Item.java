@@ -1,6 +1,7 @@
-package org.example.Domain;
+package org.example.Domain.Category;
 
 import jakarta.persistence.*;
+import org.example.Domain.Items.Item;
 
 @Entity
 public class Category_Item {

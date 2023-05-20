@@ -1,6 +1,9 @@
-package org.example.Domain;
+package org.example.Domain.Order;
 
 import jakarta.persistence.*;
+import org.example.Domain.*;
+import org.example.Domain.Delivery.Delivery;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;

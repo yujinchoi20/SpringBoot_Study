@@ -1,6 +1,8 @@
-package org.example.Domain;
+package org.example.Domain.Delivery;
 
 import jakarta.persistence.*;
+import org.example.Domain.BasicEntity;
+import org.example.Domain.Order.Order;
 
 @Entity
 public class Delivery extends BasicEntity {

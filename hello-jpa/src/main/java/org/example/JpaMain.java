@@ -19,19 +19,10 @@ public class JpaMain {
 
         try{
             Movie movie = new Movie();
-            movie.setName("드림");
-            movie.setActor("아이유");
-            movie.setDirector("이병헌");
-            movie.setPrice(15000);
+            movie.setActor("박건우");
+            movie.setDirector("NC DINOS");
 
             em.persist(movie);
-
-            Book book = new Book();
-            book.setName("JPA");
-            book.setArttist("KIM");
-            book.setPrice(43000);
-
-            em.persist(book);
 
             tx.commit();
         } catch (Exception e){

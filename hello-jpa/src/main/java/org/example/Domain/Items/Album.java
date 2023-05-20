@@ -1,9 +1,11 @@
 package org.example.Domain.Items;
 
+import jakarta.persistence.DiscriminatorColumn;
+import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-import org.example.Domain.Item;
 
 @Entity
+@DiscriminatorValue("A")
 public class Album extends Item {
 
     private String author;

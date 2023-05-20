@@ -1,6 +1,7 @@
 package org.example.Domain;
 
 import jakarta.persistence.*;
+import org.example.Domain.Order.Order;
 
 import java.util.ArrayList;
 import java.util.List;

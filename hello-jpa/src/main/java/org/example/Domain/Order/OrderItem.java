@@ -1,6 +1,7 @@
-package org.example.Domain;
+package org.example.Domain.Order;
 
 import jakarta.persistence.*;
+import org.example.Domain.Items.Item;
 
 @Entity
 @Table(name="ORDER_ITEM")

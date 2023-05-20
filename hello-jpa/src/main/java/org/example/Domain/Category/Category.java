@@ -1,6 +1,7 @@
-package org.example.Domain;
+package org.example.Domain.Category;
 
 import jakarta.persistence.*;
+import org.example.Domain.BasicEntity;
 
 import java.util.List;
 

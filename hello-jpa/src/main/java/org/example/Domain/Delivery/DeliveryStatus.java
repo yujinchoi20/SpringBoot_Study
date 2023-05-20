@@ -1,4 +1,4 @@
-package org.example.Domain;
+package org.example.Domain.Delivery;
 
 public enum DeliveryStatus {
     READY, COMP

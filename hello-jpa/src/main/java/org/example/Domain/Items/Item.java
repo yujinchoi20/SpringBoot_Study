@@ -1,14 +1,16 @@
-package org.example.Domain;
+package org.example.Domain.Items;
 
 import jakarta.persistence.*;
+import org.example.Domain.BasicEntity;
+import org.example.Domain.Category.Category_Item;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
-@DiscriminatorColumn(name = "DTYPE")
-public class Item extends BasicEntity {
-
+@Inheritance(strategy = InheritanceType.JOINED) //상속관계(조인 전략)
+@DiscriminatorColumn
+public abstract class Item extends BasicEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ITEM_ID")
@@ -19,7 +21,7 @@ public class Item extends BasicEntity {
     private int stockQuantity;
 
     @OneToMany(mappedBy = "item")
-    private List<Category_Item> category_items;
+    private List<Category_Item> category_items = new ArrayList<Category_Item>();
 
     public Long getId() {
         return id;

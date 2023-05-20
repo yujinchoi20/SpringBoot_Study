@@ -1,9 +1,10 @@
 package org.example.Domain.Items;
 
+import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-import org.example.Domain.Item;
 
 @Entity
+@DiscriminatorValue("M")
 public class Movie extends Item {
 
     private String director;
