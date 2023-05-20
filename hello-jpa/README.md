@@ -45,6 +45,17 @@
                         @MappedSuperClass는 실제 테이블과 매핑되지 않고, 단순히 매핑 정보를 상속할 목적으로만 사용된다.
 
 
+
+- > 조인 전략을 사용해서 Item 엔티티를 상속 받은 Movie 엔티티에 데이터 추가 
+
+![](img/movie_data.png)
+
+![](img/movie_db.png)
+
+@Inheritance(strategy=InheritanceType.JOINED), 
+@DiscriminatorColum(name = "DTYPE"), 
+@MappedSuperclass 어노테이션 사용
+
 ---------
 ### 5. 프록시와 연관관계
 
