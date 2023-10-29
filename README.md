@@ -121,3 +121,18 @@ __핵심!__
 -----------------
 
 ![image](https://github.com/yujinchoi20/Spring_Study_1/assets/105353163/24155bcc-63c8-4df7-a399-75d765a5d2ec)
+
+-----------------
+
+### Servlet과 JSP 차이, 한계
+
+#### JSP
+
+* java 언어를 기반으로 하는 Servlet Side 스크립트 언어이다. 
+* Servlet은 java 코드 안에 html 코드가 존재하지만, JSP는 html 코드 안에 java 코드가 존재한다. 
+* Servlet을 보완하고 기술을 확장한 스크립트 방식의 표준이다.
+* Servlet의 모든 기능을 가지면서 추가적인 기능을 가진다.
+* Servlet에 비해 요청 결과를 나타내는 뷰 화면을 작성하는데 유용하다.
+* JSP 파일이 수정된 경우 재배포 할 필요 없이 WAS가 알아서 재배포한다.
+
+![image](https://github.com/yujinchoi20/Spring_Study_1/assets/105353163/67270998-9c33-4342-a491-d1652cf069fa)
