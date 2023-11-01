@@ -136,3 +136,18 @@ __핵심!__
 * JSP 파일이 수정된 경우 재배포 할 필요 없이 WAS가 알아서 재배포한다.
 
 ![image](https://github.com/yujinchoi20/Spring_Study_1/assets/105353163/67270998-9c33-4342-a491-d1652cf069fa)
+
+-------------------------
+
+### Servlet과 JSP의 한계 MVC 패턴 등장
+
+------------------------
+
+### MVC 패턴 적용
+
+![image](https://github.com/yujinchoi20/Spring_Study_1/assets/105353163/1fcc2df6-b38e-47f5-bc65-d9e13cc2b6a5)
+
+* v1: FrontController 도입
+* v2: View 분리
+* v3: Model 추가
+* v4: 단순하고 실용적인 컨트롤러, 개발자가 사용하기 편리한 아키텍처
