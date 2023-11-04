@@ -185,3 +185,7 @@ __핵심!__
    6) 뷰 화면에 랜더링
 
 어댑터 패턴을 적용하기 전에는 컨트롤러를 직접 매핑해서 사용했다. 어댑터 패턴 적용 후에는 컨트롤러 뿐만아니라 어댑터가 지원하기만 하면 어떤 것이라도 URL 매핑을 통해 사용할 수 있다. 
+
+##### ControllerV4 추가
+
+ControllerV4 컨트롤러를 핸들러 목록에 추가하고 싶으면 ControllerV4HandlerAdapter 생성 후, FrontControllerServletV5(initHandlerMappintMap, initHandlerAdapters)만 수정하면 된다.
