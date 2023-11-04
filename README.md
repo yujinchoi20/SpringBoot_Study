@@ -151,3 +151,37 @@ __핵심!__
 * v2: View 분리
 * v3: Model 추가
 * v4: 단순하고 실용적인 컨트롤러, 개발자가 사용하기 편리한 아키텍처
+
+------------------------
+
+### 유연한 컨트롤러 사용
+
+여러 컨트롤러를 사용해서 개발하고 싶은 경우 어댑터 패턴을 사용하여 다양한 컨트롤러를 사용할 수 있다. 어댑터는 콘센트 어댑터를 생각하면 이해하기 쉽다. 220v 전자제품을 110v 전기 콘센트에 사용하고 싶다면 어댑터를 통해 사용한다. 
+
+![image](https://github.com/yujinchoi20/Spring_Study_1/assets/105353163/0fdbfb7b-4715-4fb1-9cc1-f4291ef0b907)
+
+어댑터 패턴의 요청/응답 과정은 위의 사진과 같다. 
+
+* 핸들러 어댑터: 어댑터 역할을 하며 다양한 종류의 컨트롤러를 호출할 수 있다.
+* 핸들러: 컨트롤러의 이름을 더 넓은 범위인 핸들러로 변경해서 사용한다.
+
+##### 핸들러 어댑터(MyHandlerAdapter) - interface
+1. boolean supports(Object handler): handler는 컨트롤러, 어댑터가 해당 컨트롤러를 처리할 수 있는지 판단
+2. ModelView handler(request, response, handler): 실제 컨트롤러를 호출, 그 결과를 ModelView 타입으로 반환, 실제 컨트롤러가 ModelView 타입으로 반환하지 못 한다면 어댑터가 ModelView 타입으로 변환하여 반환
+
+##### 어댑터(ControllerV3HandlerAdapter)
+1. supports 오버라이드: 사용하고 싶은 컨트롤러가 핸들러 목록에 존재하는지 조회한다.
+2. handler 오버라이드: 사용하고 싶은 컨트롤러가 핸들러 목록에 존재한다면, 컨트롤러 프로세스를 ModelView 타입으로 받아서 반환한다.
+
+##### FrontControllerServletV5
+1. handlerMappingMap, handlerAdapters 생성
+2. 기본 생성자
+3. service 메서드
+   1) 핸들러 매핑 정보 확인
+   2) 핸들러 존재 확인
+   3) 핸들러어댑터 호출
+   4) 핸들러어댑터는 핸들러 호출
+   5) 핸들러를 ModelView 타입으로 반환
+   6) 뷰 화면에 랜더링
+
+어댑터 패턴을 적용하기 전에는 컨트롤러를 직접 매핑해서 사용했다. 어댑터 패턴 적용 후에는 컨트롤러 뿐만아니라 어댑터가 지원하기만 하면 어떤 것이라도 URL 매핑을 통해 사용할 수 있다. 
