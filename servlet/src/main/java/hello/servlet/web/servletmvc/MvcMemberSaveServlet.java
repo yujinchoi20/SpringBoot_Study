@@ -24,7 +24,7 @@ public class MvcMemberSaveServlet extends HttpServlet {
         Member member = new Member(username, age);
         memberRepository.save(member);
 
-        request .setAttribute("member", member);
+        request.setAttribute("member", member);
 
         String viewPath = "/WEB-INF/views/save-result.jsp";
         RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath);
