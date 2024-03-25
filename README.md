@@ -7,7 +7,7 @@
 2. 스프링 핵심 원리 - 기본편
 3. 모든 개발자를 위한 HTTP 웹 기본 지식 ✔️
 4. 스프링 MVC 1편 - 백엔드 웹 개발 핵심 기술 ✔️
-5. 스프링 MVC 2편 - 백엔드 웹 개발 활용 기술
+5. 스프링 MVC 2편 - 백엔드 웹 개발 활용 기술 🏃
 6. 스프링 DB 1편 - 데이터 접근 핵심 원리✔️
 7. 스프링 DB 2편 - 데이터 접근 활용 기술
 8. 스프링 핵심 원리 - 고급편
@@ -189,3 +189,61 @@ __핵심!__
 ##### ControllerV4 추가
 
 ControllerV4 컨트롤러를 핸들러 목록에 추가하고 싶으면 ControllerV4HandlerAdapter 생성 후, FrontControllerServletV5(initHandlerMappintMap, initHandlerAdapters)만 수정하면 된다.
+
+-------------------------------
+
+##### FrontController 추가는 Spring MVC 기술의 핵심이 된다. 
+
+---------------------------------
+
+## MVC2편 
+
+### Section 6. 로그인 처리1 - 쿠키, 세션
+
+* Domain
+  * Item: Item, ItemRepository, SaveCheck, UpdateCheck
+  * Login
+  * Member
+* Web
+  * Item: ItemController
+    * Form: ItemSaveForm, ItemUpdateForm
+  * Login
+  * Member
+  * HomeController
+* templates
+  * css: bootstrap.min.css
+  * items: item, items, addForm, editForm
+
+#### __로그인 기능 구현__
+
+__요구사항__
+
+* 홈 화면 - 로그인 전
+  * 회원 가입
+  * 로그인
+* 홈 화면 - 로그인 후
+  * 회원 이름(text)
+  * 상품 관리
+  * 로그 아웃
+* 보안 요구사항
+  * 로그인 사용자만 상품에 접근하고, 관리할 수 있음
+  * 로그인 하지 않은 사용자가 상품 관리에 접근하면 로그인 화면으로 이동
+* 회원 가입, 상품 관리
+
+-------
+
+* 홈 화면 - 로그인 전
+![image](https://github.com/yujinchoi20/SpringBoot_Study/assets/105353163/8bdcd6fa-85ca-4380-961b-318e2fc9b64c)
+
+* 홈 화면 - 로그인 후
+![image](https://github.com/yujinchoi20/SpringBoot_Study/assets/105353163/2445d22c-cd5d-4919-8850-f1f986379a30)
+
+* 회원 가입
+![image](https://github.com/yujinchoi20/SpringBoot_Study/assets/105353163/d1891429-5b24-44f1-becd-2e8794a3c143)
+
+* 로그인
+![image](https://github.com/yujinchoi20/SpringBoot_Study/assets/105353163/e36acf8a-04d5-4974-bd86-c1fdf74f1cc0)
+
+* 상품 관리
+![image](https://github.com/yujinchoi20/SpringBoot_Study/assets/105353163/5773a6c0-510f-4327-9495-cacf83c72716)
+
