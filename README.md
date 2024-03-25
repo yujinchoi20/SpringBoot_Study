@@ -213,7 +213,8 @@ ControllerV4 컨트롤러를 핸들러 목록에 추가하고 싶으면 Controll
 * templates
   * css: bootstrap.min.css
   * items: item, items, addForm, editForm
-
+* 데이터베이스: X, 메모리 저장(Map)
+  
 #### __로그인 기능 구현__
 
 __요구사항__
@@ -232,18 +233,46 @@ __요구사항__
 
 -------
 
-* 홈 화면 - 로그인 전
+__홈 화면 - 로그인 전__
+
 ![image](https://github.com/yujinchoi20/SpringBoot_Study/assets/105353163/8bdcd6fa-85ca-4380-961b-318e2fc9b64c)
 
-* 홈 화면 - 로그인 후
+__홈 화면 - 로그인 후__
+
 ![image](https://github.com/yujinchoi20/SpringBoot_Study/assets/105353163/2445d22c-cd5d-4919-8850-f1f986379a30)
 
-* 회원 가입
+__회원 가입__
+
 ![image](https://github.com/yujinchoi20/SpringBoot_Study/assets/105353163/d1891429-5b24-44f1-becd-2e8794a3c143)
 
-* 로그인
+__로그인__
+
 ![image](https://github.com/yujinchoi20/SpringBoot_Study/assets/105353163/e36acf8a-04d5-4974-bd86-c1fdf74f1cc0)
 
-* 상품 관리
+__상품 관리__
+
 ![image](https://github.com/yujinchoi20/SpringBoot_Study/assets/105353163/5773a6c0-510f-4327-9495-cacf83c72716)
+
+--------
+
+__03/25/2024__
+
+* 회원 가입 & 로그인 기능 구현
+
+__홈 화면__
+
+![image](https://github.com/yujinchoi20/SpringBoot_Study/assets/105353163/f4a6cd72-b47d-4b33-a90e-e504b218906c)
+
+__회원 가입 화면__
+
+![image](https://github.com/yujinchoi20/SpringBoot_Study/assets/105353163/cf62b2e1-39c1-4762-896a-25ad005da6e4)
+
+__로그인 화면__
+
+![image](https://github.com/yujinchoi20/SpringBoot_Study/assets/105353163/98b683ca-c117-4945-ac67-8f718756eb1e)
+
+__log__
+
+![image](https://github.com/yujinchoi20/SpringBoot_Study/assets/105353163/15376e57-0194-4b67-991e-ac6c099c432f)
+
 
