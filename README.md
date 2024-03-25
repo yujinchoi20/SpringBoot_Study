@@ -275,4 +275,14 @@ __log__
 
 ![image](https://github.com/yujinchoi20/SpringBoot_Study/assets/105353163/15376e57-0194-4b67-991e-ac6c099c432f)
 
+* 쿠키 생성 및 응답 객체에 담아 보냄
+* 로그인 후 로그인 홈 화면으로 응답
+  * 로그인된 회원 이름 출력
+  * 홈 화면 구성: 상품 관리, 로그아웃
+* 로그아웃 기능 구현
+
+__회원 홈 화면__
+
+![image](https://github.com/yujinchoi20/SpringBoot_Study/assets/105353163/bd40df3e-6217-484a-9db2-74e2329711df)
+
 
