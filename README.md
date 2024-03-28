@@ -313,3 +313,7 @@ __03/26/2024__
     * expire: 세션 만료
     * findCookie: 쿠키 조회 메서드, stream/filter 사용해서 조회
   * HomeController: URL 요청에 따른 매핑 메서드 변경(login -> loginV2, logout -> logoutV2)
+
+__03/28/2024__
+
+* 서블릿이 지원하는 __HttpSession__ 인터페이스 적용
