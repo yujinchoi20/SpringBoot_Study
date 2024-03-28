@@ -16,6 +16,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 @Controller
 @RequiredArgsConstructor
@@ -86,6 +87,7 @@ public class LoginController {
             return "login/loginForm";
         }
 
+        //입력 받은 아이디와 비밀번호를 통해 세션을 찾기 때문에 @SessionAttribute 사용X
         Member loginMember = loginService.login(form.getLoginId(), form.getPassword());
         log.info("login = {}", loginMember);
 
