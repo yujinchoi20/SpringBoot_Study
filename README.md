@@ -319,3 +319,13 @@ __03/28/2024__
 * 서블릿이 지원하는 __HttpSession__ 인터페이스 적용
 * @SessionAttribute 애노테이션 적용 - 세션에 들어 있는 정보를 간편하게 사용할 수 있도록 스프링에서 지원하는 애노테이션
 
+__04/02/2024__
+
+* 서블릿 필터 적용
+  * 웹과 관련된 공통 관심 사항을 효과적으로 해결할 수 있는 기술 중 하나
+  * 필터 흐름: HTTP 요청 -> WAS -> 필터 -> 서블릿 -> 컨트롤러
+  * 과정 중에 적절하지 않은 요청이라고 판단되면 거기서 해당 요청을 멈춤 -> 로그인 여부 체크에 적합
+  * __LogFilter__: Filter를 상속 받아 구현, 요청, 응답과 관련된 log를 출력
+  * __LoginCheckFilter__: Filter를 상속 받아 구현, doFilter() 만 오버라이딩, 인증 체크 로직 구현
+  * __WebConfig__: 구현된 Filter를 스프링 빈에 등록
+  * __LoginController__: loginV4를 구현, @RequestParam으로 redirectURL을 사용 
