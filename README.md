@@ -326,6 +326,23 @@ __04/02/2024__
   * 필터 흐름: HTTP 요청 -> WAS -> 필터 -> 서블릿 -> 컨트롤러
   * 과정 중에 적절하지 않은 요청이라고 판단되면 거기서 해당 요청을 멈춤 -> 로그인 여부 체크에 적합
   * __LogFilter__: Filter를 상속 받아 구현, 요청, 응답과 관련된 log를 출력
-  * __LoginCheckFilter__: Filter를 상속 받아 구현, doFilter() 만 오버라이딩, 인증 체크 로직 구현
+  * __LoginCheckFilter__: Filter를 상속 받아 구현, doFilter() 만 오버라이딩(디폴트 메서드이기 때문에 꼭 오버라이딩 하지 않아도 됨), 인증 체크 로직 구현
   * __WebConfig__: 구현된 Filter를 스프링 빈에 등록
   * __LoginController__: loginV4를 구현, @RequestParam으로 redirectURL을 사용 
+
+__04/03/2024__
+
+* 스프링 인터셉터 적용
+  * 서블릿 필터와 비슷한 기술로, 웹과 관련된 공통 관심 사항을 효과적으로 해결하기 위해 사용
+  * 인터셉터 흐름: HTTP 요청 -> WAS -> 필터 -> 서블릿 -> 스프링 인터셉터 -> 컨트롤러(핸들러)
+  * HandlerInterceptor를 상속 받아 사용
+    * preHandler: 컨트롤러 호출 전에 호출 (핸들러 어댑터 호출 전에 호출)
+    * postHandler: 컨트롤러 호출 후에 호출 (핸들러 어댑터 호출 후에 호출)
+    * afterComplement: 뷰 렌더링 이후에 호출 (예외가 발생해도 항상 호출 됨)
+  * 확실한 것은 서블릿 필터보다 스프링 인터셉터가 개발자 친화적인 기술임
+  * 가장 편리했던 점1: 서블릿 필터에서는 whiteList을 따로 선언해서 인증 체크에서 제외해야 하는 경로를 추가해줌 -> 스프링 인터셉터에서는 인터셉터 등록 과정 중 excludePathPatterns을 사용하여 편리하게 인증 체크 제외 경로를 설정할 수 있음
+  * 가장 편리했던 점2: 서블릿 필터에서는 다음 필터와 연결하기 위해 chain.doFilter() 코드를 작성해야 했지만 스프링 인터셉터에서는 addInterceptors를 오버라이딩하여 인터셉터를 추가하여 우선순위를 정해주면 자동으로 체인이 걸린 것 처럼 동작함
+  * ServletRequest가 파라미터로 사용되는 서블릿 필터와 다르게 스프링 인터셉터에서는 HttpServletRequest가 파라미터로 들어오기 때문에 따로 다운캐스팅을 할 필요 없음
+  * __LogInterceptor__: HandlerInterceptor를 상속 받아 구현, preHandler/postHandler/afterComplement으로 요청 로그 출력
+  * __LoginCheckInterCeptor__: HandlerInterceptor를 상속 받아 구현, preHandler만 구현하여 인증 체크 인터셉터 구현
+  * __WebConfig__: WebMvcConfigurer를 상속 받아 구현, addInterceptors를 오버라이딩하여 인터셉터를 추가함
